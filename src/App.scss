@@ -1,0 +1,198 @@
+@font-face {
+    font-family: 'header font';
+    src: url('./fonts/DK Canoodle.otf');
+}
+@font-face {
+    font-family: 'table font';
+    src: url('./fonts/Nexa\ Regular.otf');
+}
+:root{
+    --body-container_height: calc(100vh - 200px);
+    --body-container_width: calc(100vw - (100vw / 8));
+}
+
+.App {
+    .navbar {
+        font-family: 'header font';
+        height: 70px;
+        @media screen and (max-width: 414px) {
+            height: 50px;
+        }
+        background: linear-gradient(30deg, rgb(146, 150, 95), rgb(61, 100, 51));
+        display: flex;
+        justify-content: center;
+        .exchange_icon {
+            margin-right: 20px;
+            transform: rotate(-45deg);
+            font-size: 125%;
+            color: rgb(198, 240, 11);
+            width: 40px;
+            height: 40px;
+            @media screen and (max-width: 414px) {
+                width: 30px;
+                height: 30px;
+            }
+            background-color: rgb(168, 167, 167);
+            border-radius: 50%;
+        }
+        h1 {
+            font-size: 32px;
+            @media screen and (max-width: 414px) {
+                font-size: 20px;
+            }
+            letter-spacing: 3px;
+            color: rgb(250, 250, 246)
+        }
+    }
+    .body_container {
+        margin-top: 15px;
+        box-shadow: 0px 0px 4px #666;
+        width: var(--body-container_width);
+        height: var(--body-container_height);
+        @media screen and (min-width: 1200px){
+            max-width: 1000px;
+        }
+        @media screen and (max-width: 912px){
+            height: clamp(720px, calc(var(--body-container_height) + 250px), calc(var(--body-container_height) + 250px))
+        }
+        .exchange_rates {
+            padding: 20px 0px 10px 10px;
+            height: var(--body-container_height);
+            .search_div {
+                position: relative;
+                margin: 10px;
+                padding-bottom: 10px;
+                box-shadow: 0 3px 2px -2px #666;
+                .search_box {
+                    background-color: rgb(234, 250, 224);
+                    text-align: center;
+                    font-family: 'table font';
+                }
+                .search_icon {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-70%) rotate(-7deg);
+                    right: 20px;
+                    color: rgb(116, 107, 107);
+                }
+                .clear_search {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-70%);
+                    right: 50px;
+                    width: 20px;
+                    height: 20px;
+                    padding-bottom: 2px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgb(141, 141, 138);
+                    color: rgb(255, 255, 255);
+                    font-weight: 700;
+                }
+                .search_list {
+                    position: absolute;
+                    z-index: 10;
+                    width: 100%;
+                    height: 910%;
+                    overflow: auto;
+                    background-color: white;
+                    margin-top: 5px;
+                    .search_list_item {
+                        background-color: rgb(252, 247, 247);
+                        border-width: 0x 0px 1px 0px;
+                        border-color: rgb(87, 86, 86);
+                    }
+                }
+            }
+            .rates_label {
+                text-align: center;
+                font-size: 130%;
+                font-family: 'header font';
+                color: rgb(16, 116, 7);
+                font-weight: 590;
+                letter-spacing: 1px;
+            }
+            .rates_list {
+                height: calc((var(--body-container_height) - 125px));
+                @media screen and (max-width: 912px){
+                    height: clamp(400px, calc(var(--body-container_height) - 72px), calc(var(--body-container_height) - 72px))
+                }
+                overflow: auto;
+                padding-top: 3px;
+                .table {
+                    text-align: center;
+                    font-family: 'table font';
+                    font-size: 90%;
+                }
+            }
+        }
+        .convert_container {
+            margin: auto;
+            .convert_alert {
+                text-align: center;
+                font-size: 110%;
+                font-weight: 600;
+            }
+            .select_field {
+                width: 80%;
+                margin: 20px auto;
+                @media screen and (max-width: 412px){
+                    width: 100%;
+                }
+                .flag {
+                    width: 40px;
+                    height: 40px;
+                    margin-right: 20px;
+                    border-radius: 50%;
+                }
+                .select_text {
+                    width: 60px;
+                    background-color: rgb(121, 241, 116);
+                    display: flex;
+                    justify-content: center;
+                }
+                .select_input {
+                    width: 110px;
+                    text-align: center;
+                    font-family: 'table font';
+                }
+                .select_select {
+                    width: 30px;
+                    @media screen and (max-width: 412px){
+                        width: 100px;
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        margin-top: 20px;
+        padding: 10px 0 16px 0;
+        height: fit-content;
+        width: 100%;
+        background: linear-gradient(30deg, rgb(61, 100, 51), rgb(146, 150, 95));
+        text-align: center;
+        .footer_text {
+            color: rgb(250, 250, 246);
+            font-size: 120%;
+            @media screen and (max-width: 414px) {
+                font-size: 15px;
+            }
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        .icon_container {
+            background-color: rgb(224, 195, 157);
+            width: 300px;
+            margin: 5px auto 0 auto;
+            border-radius: 5px;
+            .social_icon {
+                margin: 5px 10px;
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+} 

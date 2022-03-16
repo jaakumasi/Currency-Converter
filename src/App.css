@@ -1,0 +1,271 @@
+@font-face {
+  font-family: 'header font';
+  src: url("./fonts/DK Canoodle.otf");
+}
+
+@font-face {
+  font-family: 'table font';
+  src: url("./fonts/Nexa Regular.otf");
+}
+
+:root {
+  --body-container_height: calc(100vh - 200px);
+  --body-container_width: calc(100vw - (100vw / 8));
+}
+
+.App .navbar {
+  font-family: 'header font';
+  height: 70px;
+  background: linear-gradient(30deg, #92965f, #3d6433);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 414px) {
+  .App .navbar {
+    height: 50px;
+  }
+}
+
+.App .navbar .exchange_icon {
+  margin-right: 20px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  font-size: 125%;
+  color: #c6f00b;
+  width: 40px;
+  height: 40px;
+  background-color: #a8a7a7;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 414px) {
+  .App .navbar .exchange_icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.App .navbar h1 {
+  font-size: 32px;
+  letter-spacing: 3px;
+  color: #fafaf6;
+}
+
+@media screen and (max-width: 414px) {
+  .App .navbar h1 {
+    font-size: 20px;
+  }
+}
+
+.App .body_container {
+  margin-top: 15px;
+  -webkit-box-shadow: 0px 0px 4px #666;
+          box-shadow: 0px 0px 4px #666;
+  width: var(--body-container_width);
+  height: var(--body-container_height);
+}
+
+@media screen and (min-width: 1200px) {
+  .App .body_container {
+    max-width: 1000px;
+  }
+}
+
+@media screen and (max-width: 912px) {
+  .App .body_container {
+    height: clamp(720px, calc(var(--body-container_height) + 250px), calc(var(--body-container_height) + 250px));
+  }
+}
+
+.App .body_container .exchange_rates {
+  padding: 20px 0px 10px 10px;
+  height: var(--body-container_height);
+}
+
+.App .body_container .exchange_rates .search_div {
+  position: relative;
+  margin: 10px;
+  padding-bottom: 10px;
+  -webkit-box-shadow: 0 3px 2px -2px #666;
+          box-shadow: 0 3px 2px -2px #666;
+}
+
+.App .body_container .exchange_rates .search_div .search_box {
+  background-color: #eafae0;
+  text-align: center;
+  font-family: 'table font';
+}
+
+.App .body_container .exchange_rates .search_div .search_icon {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-70%) rotate(-7deg);
+          transform: translateY(-70%) rotate(-7deg);
+  right: 20px;
+  color: #746b6b;
+}
+
+.App .body_container .exchange_rates .search_div .clear_search {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-70%);
+          transform: translateY(-70%);
+  right: 50px;
+  width: 20px;
+  height: 20px;
+  padding-bottom: 2px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #8d8d8a;
+  color: white;
+  font-weight: 700;
+}
+
+.App .body_container .exchange_rates .search_div .search_list {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 910%;
+  overflow: auto;
+  background-color: white;
+  margin-top: 5px;
+}
+
+.App .body_container .exchange_rates .search_div .search_list .search_list_item {
+  background-color: #fcf7f7;
+  border-width: 0x 0px 1px 0px;
+  border-color: #575656;
+}
+
+.App .body_container .exchange_rates .rates_label {
+  text-align: center;
+  font-size: 130%;
+  font-family: 'header font';
+  color: #107407;
+  font-weight: 590;
+  letter-spacing: 1px;
+}
+
+.App .body_container .exchange_rates .rates_list {
+  height: calc((var(--body-container_height) - 125px));
+  overflow: auto;
+  padding-top: 3px;
+}
+
+@media screen and (max-width: 912px) {
+  .App .body_container .exchange_rates .rates_list {
+    height: clamp(400px, calc(var(--body-container_height) - 72px), calc(var(--body-container_height) - 72px));
+  }
+}
+
+.App .body_container .exchange_rates .rates_list .table {
+  text-align: center;
+  font-family: 'table font';
+  font-size: 90%;
+}
+
+.App .body_container .convert_container {
+  margin: auto;
+}
+
+.App .body_container .convert_container .convert_alert {
+  text-align: center;
+  font-size: 110%;
+  font-weight: 600;
+}
+
+.App .body_container .convert_container .select_field {
+  width: 80%;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 412px) {
+  .App .body_container .convert_container .select_field {
+    width: 100%;
+  }
+}
+
+.App .body_container .convert_container .select_field .flag {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.App .body_container .convert_container .select_field .select_text {
+  width: 60px;
+  background-color: #79f174;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .body_container .convert_container .select_field .select_input {
+  width: 110px;
+  text-align: center;
+  font-family: 'table font';
+}
+
+.App .body_container .convert_container .select_field .select_select {
+  width: 30px;
+}
+
+@media screen and (max-width: 412px) {
+  .App .body_container .convert_container .select_field .select_select {
+    width: 100px;
+  }
+}
+
+.App .footer {
+  margin-top: 20px;
+  padding: 10px 0 16px 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  background: linear-gradient(30deg, #3d6433, #92965f);
+  text-align: center;
+}
+
+.App .footer .footer_text {
+  color: #fafaf6;
+  font-size: 120%;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 414px) {
+  .App .footer .footer_text {
+    font-size: 15px;
+  }
+}
+
+.App .footer .icon_container {
+  background-color: #e0c39d;
+  width: 300px;
+  margin: 5px auto 0 auto;
+  border-radius: 5px;
+}
+
+.App .footer .icon_container .social_icon {
+  margin: 5px 10px;
+  width: 25px;
+  height: 25px;
+}
+/*# sourceMappingURL=App.css.map */
